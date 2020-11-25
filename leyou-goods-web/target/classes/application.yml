@@ -1,0 +1,25 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: goods-web
+  rabbitmq:
+    host: 39.106.140.83
+    virtual-host: /leyou
+    username: leyou
+    password: leyou
+    template:
+      exchange: LEYOU.ITEM.EXCHANGE
+    port: 5672
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 5 # 每隔5秒发送一次心跳
+    lease-expiration-duration-in-seconds: 10 # 10秒不发送就过期
+
